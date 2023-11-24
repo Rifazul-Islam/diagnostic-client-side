@@ -1,7 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+
 import toast from "react-hot-toast";
-import useAdmin from "../../hooks/useAdmin";
+import useAuth from "../../../hooks/useAuth";
+import useAdmin from "../../../hooks/useAdmin";
+
 
 
 const Navbar = () => {
@@ -37,7 +39,7 @@ const Navbar = () => {
     {/**User Condition if isAdmin and other */}      
 
    {
-    user && isAdmin &&  <li> <NavLink to="/dashboard"
+    user && isAdmin &&  <li> <NavLink to="/dashboard/adminHome"
     className={({isActive})=>
     isActive ? "bg-blue-200 p-2 rounded-md" : " " } > Dashboard </NavLink> </li>
    }

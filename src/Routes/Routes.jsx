@@ -8,6 +8,9 @@ import MyProfile from "../Pages/Dashboard/MyProfile/MyProfile";
 import MyAppointments from "../Pages/Dashboard/MyAppointments/MyAppointments";
 import TestResults from "../Pages/Dashboard/TestResults/TestResults";
 import PrivateRoute from "./PrivateRoute";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import AllBanner from "../Pages/Dashboard/AllBanner/AllBanner";
+import AddBanner from "../Pages/Dashboard/AddBanner/AddBanner";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +36,23 @@ const router = createBrowserRouter([
         path:"dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children:[
+      {/** Admin Route Access */},
+
+          {
+              path:'adminHome',
+              element: <AdminHome></AdminHome>
+          },
+          {
+              path:'allBanner',
+              element: <AllBanner></AllBanner>
+          },
+          {
+              path:'addBanner',
+              element: <AddBanner></AddBanner>
+          },
+           
+          {/** user Route Access */}
+            ,
             {
                 path:"myProfile",
                 element: <MyProfile></MyProfile>
