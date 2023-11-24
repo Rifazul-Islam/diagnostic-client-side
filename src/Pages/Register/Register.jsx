@@ -65,6 +65,7 @@ const Register = () => {
      .then(res =>{
         if(res?.data.insertedId){
           toast.success("User data inserted in mongodb Successfully")
+          navigate("/")
           reset()
         }
      })
@@ -174,7 +175,7 @@ const Register = () => {
            <span className="label-text text-[16px] ">Your Image Upload</span>
          </label>
          <label className="input-group">
-           <input type="file" {...register('image',{required: true})} placeholder="Short Description" className="input input-bordered w-full" required />
+           <input type="file" {...register('image',{required: true})} placeholder="Short Description" className="input input-bordered w-full pt-2" required />
          </label>
        </div>
        
