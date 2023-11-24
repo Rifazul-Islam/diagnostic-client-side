@@ -24,11 +24,11 @@ const{data:items =[]} = useQuery({
     }
 })
 
-console.log(items);
+// console.log(items);
 
 
     return (
-        <div className='my-24 cursor-pointer'>
+        <div className='my-24 cursor-pointer '>
        <h2 className='text-4xl font-bold text-blue-700 text-center py-10'> Our Recommendation</h2>
 
       <Swiper
@@ -42,7 +42,7 @@ console.log(items);
         className="mySwiper "
       >
        {
-        items?.map( item =>  <SwiperSlide  key={item?._id}> <img className='h-[500px]' src={item?.img}  alt="" /></SwiperSlide>)
+        items?.map( item =>  <SwiperSlide  key={item?._id}> <img className='h-[500px] rounded-lg' src={item?.img}  alt="" /></SwiperSlide>)
        }
         
       </Swiper>
