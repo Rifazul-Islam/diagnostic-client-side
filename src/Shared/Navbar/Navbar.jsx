@@ -4,10 +4,18 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
 
   const menuItems = <>
-       <li> <NavLink to="/"> Home</NavLink> </li>
+       <li> 
+    <NavLink to="/"
+    className={({isActive})=>
+    isActive ? "bg-blue-200 p-2 rounded-md" : " "
+  }
+   > Home</NavLink> </li>
        <li> <NavLink> About</NavLink> </li>
        <li> <NavLink>Blog</NavLink> </li>
-       <li> <NavLink to="login" >Login </NavLink> </li>
+       <li> <NavLink to="/register"
+            className={({isActive})=>
+            isActive ? "bg-blue-200 p-2 rounded-md" : " "
+       } >Register </NavLink> </li>
   </>
 
 
