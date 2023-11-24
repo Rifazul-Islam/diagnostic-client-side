@@ -2,6 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import useAxiosOpen from "../../hooks/useAxiosOpen";
 
 const image_Hosting_key =  import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_Hosting_key}`
@@ -9,7 +12,9 @@ const image_Hosting_Api = `https://api.imgbb.com/1/upload?key=${image_Hosting_ke
 const Register = () => {
 
     const[error,setError] = useState('');
-    const {newUserCreate} = useAuth()
+    const {newUserCreate} = useAuth();
+    const navigate = useNavigate();
+    const axiosOpen = useAxiosOpen();
 
     const { register, handleSubmit,reset } = useForm()
 
@@ -43,54 +48,33 @@ const Register = () => {
         newUserCreate(data?.email, data?.password)
         .then(result =>{
             console.log(result?.user);
+            toast.success("New User Create Successfully")
+        
+            const userInfo = {
+              name : data?.name,
+              email: data?.email,
+              bloodGroup: data?.bloodGroup,
+              district: data?.district,
+              upazila : data?.upazila,
+              image: res.data.data.display_url,
+              role : 'active'
+            }
+
+// mongoDb User Information Pass
+      axiosOpen.post("/users", userInfo)
+     .then(res =>{
+        if(res?.data.insertedId){
+          toast.success("User data inserted in mongodb Successfully")
+          reset()
+        }
+     })
+
         })
         .catch(error => {
-            console.log(error);
+          toast.error(error.message)
         })
-          
-            
-        }
-              
-    }
+        }}
 
-    // const handlerRegister = (e)=>{
-    //     e.preventDefault();
-    //     const form = e.target;
-    //     const name = form.name.value;
-    //     const email = form.email.value;
-    //     const bloodGroup = form.bloodGroup.value;
-    //     const district = form.district.value;
-    //     const upazila = form.upazila.value;
-    //     const password = form.password.value;
-    //     const confirmPass = form.confirmPass.value;
-    //     const photo = form.photo.value;
-     
-      
-      
-    
-           
-    //     if(bloodGroup === "Please Your Blood Group"){
-    //         return setError("Please Your Blood Group")
-    //       } 
-
-    //      if(district === "Please select"){
-    //        return setError("Please select Distract")
-    //      }
-         
-    //        if(upazila === "Please select"){
-    //         return setError("Please select Upzalia")
-    //       }
-       
-    //      else(
-    //         setError("")
-    //      )
-
-
-
-
-    //      const  userInfo = {name,email,bloodGroup,district,upazila,password,confirmPass,photo };
-    //      console.log(userInfo);
-    // }      
 
     return (
 <>
@@ -223,7 +207,7 @@ const Register = () => {
 <input className="btn  w-full my-7 hover:bg-secondary capitalize" type="submit" value="Add Product" />
 
 </form>  
-                                  
+<p className="pb-10 pt-2 text-center text-2xl"> Already User Please Go <Link className="text-white" to="/login">Login</Link> </p>                               
 </div>                                     
 </>
  );
