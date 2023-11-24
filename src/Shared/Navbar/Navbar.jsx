@@ -27,6 +27,13 @@ const Navbar = () => {
             className={({isActive})=>
             isActive ? "bg-blue-200 p-2 rounded-md" : " "
        } >Register </NavLink> </li>
+
+      {
+        user?.email &&  <li> <NavLink to="dashboard"
+        className={({isActive})=>
+        isActive ? "bg-blue-200 p-2 rounded-md" : " "
+   } > Dashboard </NavLink> </li>
+      }
   </>
 
   
