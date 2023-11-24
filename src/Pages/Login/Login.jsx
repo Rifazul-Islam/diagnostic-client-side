@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 
@@ -7,6 +7,10 @@ import toast from "react-hot-toast";
 const Login = () => {
     const {userLogin} = useAuth();
     const navigate = useNavigate();
+    
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/" ;
+
     const { register, handleSubmit,reset } = useForm()
 
     const onSubmit = async (data)=>{
@@ -15,7 +19,8 @@ const Login = () => {
         .then(result =>{
           console.log(result.user);
           toast.success("User Login Successfully")
-          navigate('/')
+       
+          navigate( from, { replace : true})
         })
         .catch(error =>{
            toast.error(error.message)

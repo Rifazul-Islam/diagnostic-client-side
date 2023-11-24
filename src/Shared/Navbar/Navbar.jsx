@@ -1,11 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
+import useAdmin from "../../hooks/useAdmin";
 
 
 const Navbar = () => {
 
     const {user,loginOut} = useAuth();
+
+    const [isAdmin] = useAdmin();
+
+    console.log(isAdmin);
 
     const SignOut = ()=>{
         loginOut()
@@ -28,12 +33,22 @@ const Navbar = () => {
             isActive ? "bg-blue-200 p-2 rounded-md" : " "
        } >Register </NavLink> </li>
 
-      {
-        user?.email &&  <li> <NavLink to="dashboard"
-        className={({isActive})=>
-        isActive ? "bg-blue-200 p-2 rounded-md" : " "
-   } > Dashboard </NavLink> </li>
-      }
+
+    {/**User Condition if isAdmin and other */}      
+
+   {
+    user && isAdmin &&  <li> <NavLink to="/dashboard"
+    className={({isActive})=>
+    isActive ? "bg-blue-200 p-2 rounded-md" : " " } > Dashboard </NavLink> </li>
+   }
+
+
+{
+    user && !isAdmin &&  <li> <NavLink to="/dashboard/myProfile"
+    className={({isActive})=>
+    isActive ? "bg-blue-200 p-2 rounded-md" : " " } > Dashboard2 </NavLink> </li>
+   }
+      
   </>
 
   

@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBeer } from 'react-icons/fa';
+
 
 const Dashboard = () => {
 
@@ -28,12 +28,21 @@ const Dashboard = () => {
                 isActive ? "bg-blue-200 p-2 px-16  rounded-md " : "border-2 p-2 px-16 "
             }
             >  Test Results</NavLink> </li>
+            <li> 
+                <NavLink to="/"
+                className={({isActive})=>
+                isActive ? "bg-blue-200 p-2 px-16  rounded-md " : "border-2 p-2 px-16 "
+            }
+            >  Home</NavLink> </li>
 
              </ul>
             </div>
           
             <div className=" flex-1 pt-6">
-                <Outlet></Outlet>
+                <Outlet>
+              
+
+                </Outlet>
             </div>
         </div>
     );
