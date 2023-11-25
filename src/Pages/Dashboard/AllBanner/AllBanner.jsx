@@ -74,7 +74,7 @@ const handlerDelete =  (id)=>{
     <tbody>
       {
         allBanner?.map((banner, idx) => <tr key={banner?._id} className="border-2 border-green-500">
-       
+         {console.log(banner)}
             <td>
               <label>
                 {idx + 1}
@@ -116,7 +116,7 @@ const handlerDelete =  (id)=>{
   
     
   </table>
-</div>
+  </div>
         </>
     );
 };

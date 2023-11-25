@@ -28,7 +28,7 @@ const AddTest = () => {
             testName: data?.title,
             description: data?.description,
             date : data?.date,
-            time: data?.time,
+            price: data?.price,
             slots: data?.slots,
             image: res.data.data.display_url,
           }
@@ -111,7 +111,7 @@ const AddTest = () => {
             <span className="label-text text-[16px]"> Slots Time</span>
           </label>
           <label className="input-group">
-            <input type="text" {...register("time",{required: true})} placeholder="Please write slots time" className="input input-bordered w-full" required />
+            <input type="text" {...register("slots",{required: true})} placeholder="Please write slots time" className="input input-bordered w-full" required />
           </label>
         </div>
         
