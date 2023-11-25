@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -19,7 +19,7 @@ const {data:users = [], refetch} = useQuery({
   })
 
   
-console.log(users);
+// console.log(users);
 
     return (
         <div>
