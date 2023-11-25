@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import { useState } from "react";
+
 import toast from "react-hot-toast";
 
 const AllBanner = () => {
@@ -34,10 +34,21 @@ const handlerDelete =  (id)=>{
 
 
 
+// Specipi Data Load 
 
-
-
-
+ const handlerBanner = (id)=>{
+ 
+   axiosSecure.get(`/banner/${id}`)
+   .then(res =>{
+       if(res?.data?.modifiedCount > 0){
+        toast.success("banner Home Page Add Successfully")
+          console.log(res.data);
+          refetch()
+       }
+     
+   })
+     
+ }
 
 
 
@@ -63,6 +74,7 @@ const handlerDelete =  (id)=>{
     <tbody>
       {
         allBanner?.map((banner, idx) => <tr key={banner?._id} className="border-2 border-green-500">
+       
             <td>
               <label>
                 {idx + 1}
@@ -83,7 +95,8 @@ const handlerDelete =  (id)=>{
               
             </td>
             <td>
-            <button  className="btn hover:bg-purple-600 rounded bg-green-700 text-white "> {banner?.status} </button>
+              
+            <button onClick={ ()=>handlerBanner(banner?._id)}  className="btn hover:bg-purple-600 rounded bg-green-700 text-white"> false </button>
             </td>
 
             <td>

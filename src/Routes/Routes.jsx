@@ -11,6 +11,9 @@ import PrivateRoute from "./PrivateRoute";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import AllBanner from "../Pages/Dashboard/AllBanner/AllBanner";
 import AddBanner from "../Pages/Dashboard/AddBanner/AddBanner";
+import AllTest from "../Pages/AllTest/AllTest";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AddTest from "../Pages/Dashboard/AddTest/AddTest";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path:"/login",
                 element: <Login></Login>
+            },
+            {
+                path:"/allTest",
+                element: <AllTest></AllTest>
             }
         ]
     },
@@ -41,6 +48,14 @@ const router = createBrowserRouter([
           {
               path:'adminHome',
               element: <AdminHome></AdminHome>
+          },
+          {
+              path:'allUsers',
+              element: <AllUsers></AllUsers>
+          },
+          {
+              path:'addTest',
+              element: <AddTest></AddTest>
           },
           {
               path:'allBanner',

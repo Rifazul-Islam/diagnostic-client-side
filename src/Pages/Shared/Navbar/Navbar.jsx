@@ -29,7 +29,7 @@ const Navbar = () => {
   }
    > Home</NavLink> </li>
        <li> <NavLink> About</NavLink> </li>
-       <li> <NavLink>Blog</NavLink> </li>
+       <li> <NavLink to="/allTest"> All Test </NavLink> </li>
        <li> <NavLink to="/register"
             className={({isActive})=>
             isActive ? "bg-blue-200 p-2 rounded-md" : " "

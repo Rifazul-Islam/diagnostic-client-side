@@ -19,6 +19,21 @@ const Dashboard = () => {
             isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
         }
         >  AdminHome</NavLink> </li>  
+             <li> 
+            <NavLink to="/dashboard/allUsers"
+            className={({isActive})=>
+            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
+        }
+        >  All Users</NavLink> </li>  
+
+             <li> 
+            <NavLink to="/dashboard/addTest"
+            className={({isActive})=>
+            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
+        }
+        >  AddTest</NavLink> </li>  
+
+
 
              <li> 
             <NavLink to="/dashboard/allBanner"

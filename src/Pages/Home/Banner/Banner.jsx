@@ -16,13 +16,13 @@ const{data:banners = []} = useQuery({
 })
 
 // console.log(banners);
-
+const originalBanner = banners.filter(items => items?.status === true);
 
     return (
      
      <div>
            {
-            banners?.map(item => <Dynamic key={item?._id} item={item} ></Dynamic>)
+            originalBanner?.map(item => <Dynamic key={item?._id} item={item} ></Dynamic>)
            }
      </div>
        
