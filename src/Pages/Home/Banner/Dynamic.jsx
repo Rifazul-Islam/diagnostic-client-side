@@ -1,4 +1,5 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+
 
 const Dynamic = ({item}) => {
     const {title,image,description,coupon,discount} = item ;
@@ -14,7 +15,7 @@ const Dynamic = ({item}) => {
                 <p className='text-5xl font-bold my-2 text-white'> {discount} % Discount  </p>
 
 
-                <button className="btn btn-primary mt-10">All Test </button>
+               <Link to="/allTest" >  <button className="btn btn-primary mt-10">All Test </button></Link>
                 </div>
             </div>
             </div>

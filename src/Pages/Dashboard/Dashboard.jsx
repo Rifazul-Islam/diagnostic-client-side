@@ -1,106 +1,67 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../../hooks/useAdmin";
-
+import { FaHome, FaUsers} from "react-icons/fa";
 
 const Dashboard = () => {
   const [isAdmin] = useAdmin()
     return (
-        <div className="flex flex-col md:flex-row gap-7">
+       <>
+       
+     <div className="relative">
+     <div className="drawer lg:drawer-open">
+  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content flex flex-col pt-10">
+    {/* Page content here */}
+    
+    <div>
+    <Outlet></Outlet>
+    <label htmlFor="my-drawer-2"  className="btn btn-sm hover:bg-success bg-orange-700 drawer-button lg:hidden absolute top-1 text-white "><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
+    </div>
+  </div> 
+  <div className="drawer-side">
+    <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
+    <ul className="menu  p-4  min-h-full bg-base-200 text-base-content ">
+      {/* Sidebar content here */}
+     
+{
+isAdmin ?  <>
+ <li> <NavLink to="/dashboard/adminHome"><FaHome></FaHome>  AdminHome</NavLink> </li>  
+ <li> <NavLink to="/dashboard/allUsers">  <FaUsers/> All Users</NavLink> </li>  
 
-            <div className="bg-zinc-400 md:w-64 min-h-screen">
-             <ul className="text-center mx-auto pt-10 space-y-8">
+ <li> <NavLink to="/dashboard/allTests">  AllTest</NavLink> </li>  
+ <li> <NavLink to="/dashboard/addTest">  AddTest</NavLink> </li>  
 
+ <li> <NavLink to="/dashboard/allBanner">  AllBanner</NavLink> </li>  
+ <li> <NavLink to="/dashboard/addBanner">  AddBanner</NavLink> </li>  
 
-          {
-            isAdmin ?  <>
-             <li> 
-            <NavLink to="/dashboard/adminHome"
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-        }
-        >  AdminHome</NavLink> </li>  
-             <li> 
-            <NavLink to="/dashboard/allUsers"
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-        }
-        >  All Users</NavLink> </li>  
+</>
 
-             <li> 
-            <NavLink to="/dashboard/addTest"
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-        }
-        >  AddTest</NavLink> </li>  
-
-
-
-             <li> 
-            <NavLink to="/dashboard/allBanner"
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-        }
-        >  AllBanner</NavLink> </li>  
-
-             <li> 
-            <NavLink to="/dashboard/addBanner"
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-        }
-        >  AddBanner</NavLink> </li>  
-            
-         </>
-
-        :
-          <>
-          
-          
-          <li> 
-                <NavLink to="/dashboard/myProfile"
-                className={({isActive})=>
-                isActive ? "bg-blue-200 p-2 px-16 rounded-md" : " border-2 p-2 px-16"
-            }
-            >   MyProfile</NavLink> </li>
-               
-            <li> 
-                <NavLink to="/dashboard/myAppointments"
-                className={({isActive})=>
-                isActive ? "bg-blue-200 p-2 px-10  rounded-md " : "border-2 p-2 px-10 "
-            }
-            >   MyAppointments</NavLink> </li>
-            <li> 
-                <NavLink to="/dashboard/textResults"
-                className={({isActive})=>
-                isActive ? "bg-blue-200 p-2 px-16  rounded-md " : "border-2 p-2 px-16 "
-            }
-            >  Test Results</NavLink> </li>
-           
-
-          
-          </>
+:
+<>
 
 
+<li> <NavLink to="/dashboard/myProfile"> MyProfile</NavLink> </li>
+   
+<li> <NavLink to="/dashboard/myAppointments">MyAppointments</NavLink> </li>
+<li> <NavLink to="/dashboard/textResults"> Test Results</NavLink> </li>
+</>
+}
 
-        
-          }
-             
-             <li> 
-                <NavLink to="/"
-                className={({isActive})=>
-                isActive ? "bg-blue-200 p-2 px-16  rounded-md " : "border-2 p-2 px-16 "
-            }
-            >  Home</NavLink> </li>
 
-             </ul>
-            </div>
-          
-            <div className=" flex-1 pt-6">
-                <Outlet>
-              
+ 
+ <li> <NavLink to="/">  Home</NavLink> </li>
+    </ul>
 
-                </Outlet>
-            </div>
-        </div>
+
+  
+  </div>
+</div>
+     </div>
+
+       </>
+
+
+       
     );
 };
 

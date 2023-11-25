@@ -29,7 +29,8 @@ const AddTest = () => {
             description: data?.description,
             date : data?.date,
             price: data?.price,
-            slots: data?.slots,
+            slotsStart: data?.slotsStart,
+            slotsEnd: data?.slotsEnd,
             image: res.data.data.display_url,
           }
 
@@ -99,6 +100,28 @@ const AddTest = () => {
         <div className="flex gap-3 pt-5 ">
         <div className="form-control w-full">
           <label className="label">
+            <span className="label-text text-[16px]"> Slots Start</span>
+          </label>
+          <label className="input-group">
+            <input type="text" {...register("slotsStart",{required: true})} placeholder="Please write slots time" className="input input-bordered w-full" required />
+          </label>
+        </div>
+
+        <div className="form-control w-full">
+          <label className="label">
+            <span className="label-text text-[16px]"> Slots End</span>
+          </label>
+          <label className="input-group">
+            <input type="text" {...register("slotsEnd",{required: true})} placeholder="Please write slots time" className="input input-bordered w-full" required />
+          </label>
+        </div>
+        
+        </div>
+
+        
+
+        <div className="form-control w-full">
+          <label className="label">
             <span className="label-text text-[16px]"> Test Date </span>
           </label>
           <label className="input-group">
@@ -106,16 +129,6 @@ const AddTest = () => {
           </label>
         </div>
 
-        <div className="form-control w-full">
-          <label className="label">
-            <span className="label-text text-[16px]"> Slots Time</span>
-          </label>
-          <label className="input-group">
-            <input type="text" {...register("slots",{required: true})} placeholder="Please write slots time" className="input input-bordered w-full" required />
-          </label>
-        </div>
-        
-        </div>
         
         
         <input className="btn my-4 bg-orange-600 text-white" type="submit" value="Add Test" />

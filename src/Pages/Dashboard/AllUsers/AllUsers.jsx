@@ -31,7 +31,7 @@ const handlerUserLoad = (id)=>{
    
     return (
         <>
- <div className="overflow-x-auto">
+ <div className="overflow-x-auto w-full px-2">
   <table className="table">
     {/* head */}
     <thead className="bg-zinc-500 text-white text-[18px] h-[70px] rounded-lg">
