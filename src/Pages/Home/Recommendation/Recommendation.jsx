@@ -16,7 +16,7 @@ import { useQuery } from '@tanstack/react-query';
 const Recommendation = () => {
 
 const axiosOpen = useAxiosOpen();
-const{data:items =[]} = useQuery({
+const{data:items =[] , isLoading} = useQuery({
     queryKey: ['items'],
     queryFn: async()=>{
         const res = await axiosOpen.get("/recommendation")
@@ -24,8 +24,10 @@ const{data:items =[]} = useQuery({
     }
 })
 
-// console.log(items);
 
+if(isLoading){
+  return <div className=" text-center my-20 text-blue-700"> <span className="loading loading-spinner loading-lg"></span></div>
+ }
 
     return (
         <div className='my-24 cursor-pointer '>

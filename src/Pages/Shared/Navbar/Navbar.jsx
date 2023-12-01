@@ -49,11 +49,7 @@ const Navbar = () => {
             isActive ? "bg-blue-200 p-2 rounded-md" : " "}
        > About</NavLink> </li>
 
-       {/* <li> <NavLink to="/register"
-
-            className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 rounded-md" : " "}
-             >Register </NavLink> </li> */}
+    
 
 
     {/**User Condition if isAdmin and other */}      
@@ -68,7 +64,7 @@ const Navbar = () => {
 {
     user && !isAdmin &&  <li> <NavLink to="/dashboard/myProfile"
     className={({isActive})=>
-    isActive ? "bg-blue-200 p-2 rounded-md" : " " } > Dashboard2 </NavLink> </li>
+    isActive ? "bg-blue-200 p-2 rounded-md" : " " } > Dashboard </NavLink> </li>
    }
       
   </>

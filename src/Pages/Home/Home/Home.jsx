@@ -1,5 +1,6 @@
-import Doctor from "../../Doctor/Doctor";
+
 import Banner from "../Banner/Banner";
+import Doctor from "../Doctor/Doctor";
 import Featured from "../Featured/Featured";
 import Recommendation from "../Recommendation/Recommendation";
 

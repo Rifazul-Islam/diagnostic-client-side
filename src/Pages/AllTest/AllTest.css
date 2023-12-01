@@ -1,0 +1,20 @@
+.pagination{
+    text-align: center;
+    margin-bottom: 20px;
+   }
+   
+   .pagination button{
+     margin-left: 5;
+     font-size: 20px;
+   
+     margin: 5px;
+     border: none;
+   
+   }
+   .def{
+       background: rgb(149, 195, 215);
+   }
+   
+   .selected{
+    background: orangered;
+   }

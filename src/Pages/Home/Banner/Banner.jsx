@@ -7,13 +7,17 @@ const Banner = () => {
 const axiosOpen = useAxiosOpen()
 
 
-const{data:banners = []} = useQuery({
+const{data:banners = [] , isLoading} = useQuery({
     queryKey: ['banners'],
      queryFn : async()=>{
         const res = await axiosOpen.get("/banners")
         return res.data
      }
 })
+
+if(isLoading){
+    return <div className=" text-center my-20 text-blue-700"> <span className="loading loading-spinner loading-lg"></span></div>
+   }
 
 // console.log(banners);
 const originalBanner = banners.filter(items => items?.status === true);
