@@ -128,7 +128,8 @@ const handlerUserLoad = (id)=>{
                      <button className="btn  bg-indigo-700 hover:bg-success text-white"> Status Change Admin </button>
                      </div>
                      </div>
-                 </dialog>
+
+</dialog>
 
 
 

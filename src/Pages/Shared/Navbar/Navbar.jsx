@@ -57,7 +57,7 @@ const Navbar = () => {
 
     return (
     <div>
-    <div className="navbar bg-base-100 py-7 shadow-lg px-3">
+    <div className="navbar bg-base-100  shadow-lg px-3">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden ">
@@ -67,7 +67,9 @@ const Navbar = () => {
        {menuItems}
       </ul>
     </div>
-    <h2 className=" cursor-pointer text-2xl font-bold"> Diagnostic </h2>
+    <h2 className="cursor-pointer text-2xl font-bold"> 
+    <img className="w-24"  src="https://i.ibb.co/JKgZhwS/logo.png" alt="" />
+      </h2>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="space-x-3 text-[18px] menu-horizontal px-1">

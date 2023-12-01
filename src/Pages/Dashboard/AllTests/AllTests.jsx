@@ -1,9 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+
 
 const AllTests = () => {
     const axiosSecure = useAxiosSecure();
-
+   
 
     const{data:itemTests=[], refetch} = useQuery({
         queryKey: ['itemTests'],
@@ -14,6 +17,27 @@ const AllTests = () => {
 
        
     })
+
+
+// banner System Specific delete
+ 
+const handlerTestDelete  =  (id)=>{
+  
+  axiosSecure.delete(`/tests/${id}`)
+  .then(res =>{
+  if(res.data.deletedCount > 0){
+      toast.success("Test Delete Successfully")
+ 
+      refetch()
+  }
+  })
+    
+ }
+
+
+
+
+
 
     return (
  <>
@@ -59,17 +83,17 @@ const AllTests = () => {
             </td>
             <td>
               
-            <button   className="btn btn-sm hover:bg-purple-600 rounded bg-green-700 text-white"> Update</button>
+          <Link to={`/updateTest/${item?._id}`}>  <button   className="btn btn-sm hover:bg-purple-600 rounded bg-green-700 text-white"> Update </button> </Link>  
             </td>
 
             <td>
-              <button  className="btn btn-sm hover:bg-purple-600 rounded bg-red-700 text-white">Delete</button>
+          
+              <button onClick={()=>handlerTestDelete(item?._id)}  className="btn btn-sm hover:bg-purple-600 rounded bg-red-700 text-white">  Delete</button>
+            
             </td>
           </tr>
             
-            
-            
-            )
+      )
       }
       
     
@@ -80,6 +104,7 @@ const AllTests = () => {
     
   </table>
   </div> 
+
         </>
     );
 };

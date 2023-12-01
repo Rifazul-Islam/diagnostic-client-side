@@ -17,7 +17,7 @@ const AllBanner = () => {
     
 
 
-// banner System Piliment
+// banner System Specific delete
  
 const handlerDelete =  (id)=>{
 
@@ -34,7 +34,7 @@ const handlerDelete =  (id)=>{
 
 
 
-// Specipi Data Load 
+// Specific Data Load 
 
  const handlerBanner = (id)=>{
  
@@ -96,11 +96,11 @@ const handlerDelete =  (id)=>{
             </td>
             <td>
               
-            <button onClick={ ()=>handlerBanner(banner?._id)}  className="btn hover:bg-purple-600 rounded bg-green-700 text-white"> false </button>
+            <button onClick={ ()=>handlerBanner(banner?._id)}  className="btn btn-sm hover:bg-purple-600 rounded bg-green-700 text-white"> false </button>
             </td>
 
             <td>
-              <button onClick={()=>handlerDelete(banner?._id)} className="btn hover:bg-purple-600 rounded bg-red-700 text-white">Delete</button>
+              <button onClick={()=>handlerDelete(banner?._id)} className="btn btn-sm hover:bg-purple-600 rounded bg-red-700 text-white">Delete</button>
             </td>
           </tr>
             

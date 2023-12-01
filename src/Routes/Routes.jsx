@@ -15,6 +15,8 @@ import AllTest from "../Pages/AllTest/AllTest";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AddTest from "../Pages/Dashboard/AddTest/AddTest";
 import AllTests from "../Pages/Dashboard/AllTests/AllTests";
+import TestDetails from "../Pages/TestDetail/TestDetails";
+import UpdateTest from "../Pages/Dashboard/AllTests/UpdateTest";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +38,17 @@ const router = createBrowserRouter([
             {
                 path:"/allTest",
                 element: <AllTest></AllTest>
+            },
+            {
+                path:"/testDetail/:id",
+                element: <TestDetails></TestDetails>,
+                loader:({params}) => fetch(`http://localhost:5000/tests/${params.id}`)
+            }
+            ,
+            {
+                path:"/updateTest/:id",
+                element: <UpdateTest></UpdateTest>,
+                loader:({params}) => fetch(`http://localhost:5000/tests/${params.id}`)
             }
         ]
     },
