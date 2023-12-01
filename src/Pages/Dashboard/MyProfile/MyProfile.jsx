@@ -29,7 +29,7 @@ const {data:users = [], refetch} = useQuery({
 
 
   
-  const { register, handleSubmit,reset } = useForm();
+  const { register, handleSubmit} = useForm();
 
   const onSubmit = async (data)=>{
 

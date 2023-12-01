@@ -42,7 +42,7 @@ const{data:items =[]} = useQuery({
         className="mySwiper "
       >
        {
-        items?.map( item =>  <SwiperSlide  key={item?._id}> <img className='h-[500px] rounded-lg' src={item?.img}  alt="" /></SwiperSlide>)
+        items?.map( item =>  <SwiperSlide  key={item?._id}> <img className=' h-[200px] md:h-[500px]  rounded-lg' src={item?.img}  alt="" /></SwiperSlide>)
        }
         
       </Swiper>

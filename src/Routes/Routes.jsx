@@ -17,6 +17,9 @@ import AddTest from "../Pages/Dashboard/AddTest/AddTest";
 import AllTests from "../Pages/Dashboard/AllTests/AllTests";
 import TestDetails from "../Pages/TestDetail/TestDetails";
 import UpdateTest from "../Pages/Dashboard/AllTests/UpdateTest";
+import Contact from "../Pages/Home/Contact/Contact";
+import Blog from "../Pages/Home/Blog/Blog";
+import About from "../Pages/Home/About/About";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +29,18 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element: <Home></Home>
+            },
+            {
+              path:"/contact",
+              element: <Contact></Contact>
+            },
+            {
+              path:"/Blog",
+              element: <Blog></Blog>
+            },
+            {
+              path:"/about",
+              element: <About></About>
             },
             {
                 path:"/register",

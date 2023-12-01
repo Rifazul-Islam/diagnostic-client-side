@@ -49,9 +49,9 @@ const AddTest = () => {
 
 
     return (
-        <div className=" px-40 ">
+        <div className="px-2 lg:px-40">
         <h2 className="text-center text-2xl font-bold"> Add Test</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="border-2 p-4 mt-4"> 
+        <form onSubmit={handleSubmit(onSubmit)} className="border-2 border-blue-200 p-4 mt-4"> 
         
         <div className="flex gap-3 pt-5 ">
         

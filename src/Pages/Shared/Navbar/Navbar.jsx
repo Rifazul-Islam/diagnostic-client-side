@@ -28,12 +28,32 @@ const Navbar = () => {
     isActive ? "bg-blue-200 p-2 rounded-md" : " "
   }
    > Home</NavLink> </li>
-       <li> <NavLink> About</NavLink> </li>
-       <li> <NavLink to="/allTest"> All Test </NavLink> </li>
-       <li> <NavLink to="/register"
+       <li> <NavLink to="/allTest"
+       className={({isActive})=>
+       isActive ? "bg-blue-200 p-2 rounded-md" : " " }
+       > All Test </NavLink> </li>
+
+       <li> <NavLink to="/contact"
+       className={({isActive})=>
+       isActive ? "bg-blue-200 p-2 rounded-md" : " " }
+       > Contact</NavLink> </li>
+
+       <li> <NavLink
+       to="/blog"
+       className={({isActive})=>
+       isActive ? "bg-blue-200 p-2 rounded-md" : " " }
+       > Blog</NavLink> </li>
+
+       <li> <NavLink to="/about"
+       className={({isActive})=>
+            isActive ? "bg-blue-200 p-2 rounded-md" : " "}
+       > About</NavLink> </li>
+
+       {/* <li> <NavLink to="/register"
+
             className={({isActive})=>
-            isActive ? "bg-blue-200 p-2 rounded-md" : " "
-       } >Register </NavLink> </li>
+            isActive ? "bg-blue-200 p-2 rounded-md" : " "}
+             >Register </NavLink> </li> */}
 
 
     {/**User Condition if isAdmin and other */}      

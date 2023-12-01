@@ -44,16 +44,16 @@ const AddBanner = () => {
     }
 
 
-    return (
+return (
   <div className=" px-2 lg:px-40 ">
 <h2 className="text-center text-2xl font-bold"> Add Banner </h2>
 <form onSubmit={handleSubmit(onSubmit)} className="border-2 p-4 mt-4"> 
 
 <div className="flex gap-3 pt-5 ">
 
-<div className="form-control w-1/2  ">
+<div className="form-control w-1/2">
   <label className="label">
-    <span className="label-text text-[16px] "> Banner Title </span>
+    <span className="label-text text-[16px]"> Banner Title </span>
   </label>
   <label className="input-group">
     <input type="text" {...register("title",{required: true})}  placeholder="Banner Title" className="input input-bordered w-full" required />
