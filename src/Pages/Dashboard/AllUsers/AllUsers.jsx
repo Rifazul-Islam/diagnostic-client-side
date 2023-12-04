@@ -21,6 +21,8 @@ const AllUsers = () => {
     });
   };
 
+  // console.log(allUsers);
+
   return (
     <>
       <div className="overflow-x-auto w-full px-2">
@@ -89,7 +91,7 @@ const AllUsers = () => {
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
 
       <dialog id="my_modal_3" className="modal">
-        <div className="modal-box">
+        <div className="modal-box w-96 border-4">
           <form method="dialog">
             {/* if there is a button in form, it will close the modal */}
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">

@@ -20,6 +20,7 @@ const TestDetails = () => {
       description,
       slotsStart,
       slotsEnd,
+      status: "pending",
     };
 
     axiosSecure.post("/appointments", appointment).then((res) => {

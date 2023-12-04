@@ -55,7 +55,7 @@ const TestResults = () => {
                   <td>
                     <button className="btn btn-sm hover:bg-purple-600 rounded bg-primary text-white">
                       {" "}
-                      Pending{" "}
+                      {item?.status}{" "}
                     </button>
                   </td>
                 </tr>
