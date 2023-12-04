@@ -22,99 +22,107 @@ import Blog from "../Pages/Home/Blog/Blog";
 import About from "../Pages/Home/About/About";
 
 const router = createBrowserRouter([
-    {
-        path:"/",
-        element:<MainLayout></MainLayout>,
-        children:[
-            {
-                path:"/",
-                element: <Home></Home>
-            },
-            {
-              path:"/contact",
-              element: <Contact></Contact>
-            },
-            {
-              path:"/Blog",
-              element: <Blog></Blog>
-            },
-            {
-              path:"/about",
-              element: <About></About>
-            },
-            {
-                path:"/register",
-                element: <Register></Register>
-            },
-            {
-                path:"/login",
-                element: <Login></Login>
-            },
-            {
-                path:"/allTest",
-                element: <AllTest></AllTest>
-            },
-            {
-                path:"/testDetail/:id",
-                element: <TestDetails></TestDetails>,
-                loader:({params}) => fetch(`http://localhost:5000/tests/${params.id}`)
-            }
-            ,
-            {
-                path:"/updateTest/:id",
-                element: <UpdateTest></UpdateTest>,
-                loader:({params}) => fetch(`http://localhost:5000/tests/${params.id}`)
-            }
-        ]
-    },
+  {
+    path: "/",
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
+      },
+      {
+        path: "/Blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/allTest",
+        element: <AllTest></AllTest>,
+      },
+      {
+        path: "/testDetail/:id",
+        element: <TestDetails></TestDetails>,
+        loader: ({ params }) =>
+          fetch(`https://diagnostic-server-side.vercel.app/tests/${params.id}`),
+      },
+      {
+        path: "/updateTest/:id",
+        element: <UpdateTest></UpdateTest>,
+        loader: ({ params }) =>
+          fetch(`https://diagnostic-server-side.vercel.app/tests/${params.id}`),
+      },
+    ],
+  },
 
-    {
-        path:"dashboard",
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-        children:[
-      {/** Admin Route Access */},
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        /** Admin Route Access */
+      },
 
-          {
-              path:'adminHome',
-              element: <AdminHome></AdminHome>
-          },
-          {
-              path:'allUsers',
-              element: <AllUsers></AllUsers>
-          },
-          {
-              path:'addTest',
-              element: <AddTest></AddTest>
-          },
-          {
-              path:'allTests',
-              element: <AllTests></AllTests>
-          },
-          {
-              path:'allBanner',
-              element: <AllBanner></AllBanner>
-          },
-          {
-              path:'addBanner',
-              element: <AddBanner></AddBanner>
-          },
-           
-          {/** user Route Access */}
-            ,
-            {
-                path:"myProfile",
-                element: <MyProfile></MyProfile>
-            },
-            {
-                path:"myAppointments",
-                element: <MyAppointments></MyAppointments>
-            },
-            {
-                path:"textResults",
-                element: <TestResults></TestResults>
-            }
-        ]
-    }
-])
+      {
+        path: "adminHome",
+        element: <AdminHome></AdminHome>,
+      },
+      {
+        path: "allUsers",
+        element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "addTest",
+        element: <AddTest></AddTest>,
+      },
+      {
+        path: "allTests",
+        element: <AllTests></AllTests>,
+      },
+      {
+        path: "allBanner",
+        element: <AllBanner></AllBanner>,
+      },
+      {
+        path: "addBanner",
+        element: <AddBanner></AddBanner>,
+      },
 
-export default router ;
+      {
+        /** user Route Access */
+      },
+      {
+        path: "myProfile",
+        element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "myAppointments",
+        element: <MyAppointments></MyAppointments>,
+      },
+      {
+        path: "textResults",
+        element: <TestResults></TestResults>,
+      },
+    ],
+  },
+]);
+
+export default router;
