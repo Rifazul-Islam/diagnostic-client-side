@@ -1,34 +1,20 @@
 import { useLoaderData } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import toast from "react-hot-toast";
+import Payment from "../Payment/Payment";
 
 const TestDetails = () => {
   const tests = useLoaderData();
-  const axiosSecure = useAxiosSecure();
-  const { user } = useAuth();
+
   const { image, testName, price, date, description, slotsStart, slotsEnd } =
     tests;
 
-  const handlerAppointMent = () => {
-    const appointment = {
-      userEmail: user?.email,
-      image,
-      testName,
-      price,
-      date,
-      description,
-      slotsStart,
-      slotsEnd,
-      status: "pending",
-    };
+  const handler = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const digit = form.propr.value;
+    const promoCode = parseInt(digit);
 
-    axiosSecure.post("/appointments", appointment).then((res) => {
-      console.log(res?.data);
-      if (res.data.insertedId) {
-        toast.success("Your Appointment Insert MongoDB Successfully");
-      }
-    });
+    console.log(promoCode);
+    form.reset();
   };
 
   return (
@@ -64,13 +50,51 @@ const TestDetails = () => {
               <p> Price : {price} </p>
             </div>
             <div className="card-actions justify-end">
-              <button onClick={handlerAppointMent} className="btn btn-primary">
-                AppointMent{" "}
+              <button
+                onClick={() =>
+                  document.getElementById("my_modal_3").showModal()
+                }
+                className="btn btn-primary"
+              >
+                Book Now
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {/* You can open the modal using document.getElementById('ID').showModal() method */}
+
+      <dialog id="my_modal_3" className="modal">
+        <div className="modal-box ">
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+              ✕
+            </button>
+          </form>
+          <h3 className="font-bold text-lg my-5">Give Your PromoCode!</h3>
+          <form onSubmit={handler}>
+            <input
+              type="text"
+              placeholder="Give Your PromoCode"
+              name="propr"
+              className="input input-bordered w-full max-w-xs"
+            />
+            <input
+              className="btn btn-primary ml-4"
+              type="submit"
+              value="Submit"
+            />
+          </form>
+
+          <div className="my-10">
+            <h2 className="text-3xl text-green-600 my-5"> Please Payment</h2>
+
+            <Payment tests={tests}></Payment>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 };
