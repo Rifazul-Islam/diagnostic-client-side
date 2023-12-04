@@ -1,8 +1,19 @@
-# React + Vite
+# My Project Live Link
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+(https://diagnostic-client-side.web.app/)
 
-Currently, two official plugins are available:
+### Admin Email : rifazul70@gmail.com
+
+### password: 778899
+
+## My Project Feature
+
+- My Project diagnostic all Tests related.
+- It project technology use Stripe, Axios, TanStack Query, react, firebase, react-router etc.
+- It project dataBase use MongoDB.
+- It project Admin is powerful.
+- A logged in user will get many benefits.
+- A logged in user can post Booking test and payment many.
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

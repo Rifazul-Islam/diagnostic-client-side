@@ -63,13 +63,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tests/${params.id}`),
+          fetch(`https://diagnostic-server-side.vercel.app/tests/${params.id}`),
       },
       {
         path: "/updateTest/:id",
         element: <UpdateTest></UpdateTest>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tests/${params.id}`),
+          fetch(`https://diagnostic-server-side.vercel.app/tests/${params.id}`),
       },
     ],
   },

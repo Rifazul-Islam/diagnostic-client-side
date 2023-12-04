@@ -127,7 +127,7 @@ const CheckoutForm = ({ tests }) => {
       <button
         className="btn btn-sm btn-primary my-6 mt-28"
         type="submit"
-        disabled={!stripe}
+        disabled={!stripe || !clientSecret}
       >
         Pay
       </button>

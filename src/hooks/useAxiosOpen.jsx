@@ -2,7 +2,7 @@ import axios from "axios";
 
 const useAxiosOpen = () => {
   const axiosOpen = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://diagnostic-server-side.vercel.app",
   });
   return axiosOpen;
 };
