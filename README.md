@@ -9,11 +9,11 @@
 ## My Project Feature
 
 - My Project diagnostic all Tests related.
-- It project technology use Stripe, Axios, TanStack Query, react, firebase, react-router etc.
-- It project dataBase use MongoDB.
-- It project Admin is powerful.
-- A logged in user will get many benefits.
-- A logged in user can post Booking test and payment many.
+- In fact, on this site, when the admin goes to his dashboard, he can see all users, all the banners, and the admin can update and delete the tests if he wants. He can add new tests if he wants.
+- Admin can create new banner by going to his dashboard. And can show that banner on homepage.
+- A normal user can book his test before he login and make payment as well.
+- A normal user can go to his dashboard and see all his tests and view his profile..
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technology Used
+
+Stripe, Axios, TanStack Query, react, firebase, react-router etc.

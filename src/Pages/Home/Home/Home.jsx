@@ -6,7 +6,6 @@ import Recommendation from "../Recommendation/Recommendation";
 const Home = () => {
   return (
     <div>
-      <h1> Hello Brother</h1>
       <Banner></Banner>
       <Featured></Featured>
       <Recommendation></Recommendation>
